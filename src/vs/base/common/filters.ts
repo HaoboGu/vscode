@@ -481,6 +481,9 @@ function isSeparatorAtPos(value: string, index: number): boolean {
 		case CharCode.DollarSign:
 			return true;
 		default:
+			if (strings.isEmojiImprecise(code)) {
+				return true;
+			}
 			return false;
 	}
 }
